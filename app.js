@@ -14,42 +14,41 @@ var port = 3001;
 app.listen(port, function() {
   console.log(`App de Exemplo escutando na porta http://localhost:${port}/`);
 });
+function soma(a, b) {
+    return a + b;
+}
+
+function subtracao(a, b){
+    return a - b;
+}
+
+function divisao(a, b){
+    return a / b;
+}
+function multiplicacao(a, b){
+    return a * b
+}
 
 app.post('/soma', function (req, res) {
-
-    res.send('Response da requisição POST');
-  var body = req.body;
-  console.log(body);
-  res.send('via post');
-    
-  });
-
-  function soma(a, b) {
-    return a + b;
-  }
-
-  function subtracao(a, b){
-    return a - b;
-  }
-
-  function divisao(a, b){
-    return a / b;
-  }
-  function multiplicacao(a, b){
-    return a * b
-  }
-
   var body = req.body;
   var resultado = soma(body.a, body.b);
-  var resultado2 = subtracao(body.a, body.b);
-  var resultado3 = divisao(body.a, body.b);
-  var resultado4 = multiplicacao(body.a, body.b);
-
-
   res.send(`O resultado da soma de ${body.a} e ${body.b} é ${resultado}`);
-  res.send(`O resultado da subtração de ${body.a} e ${body.b} é ${resultado2}`);
-  res.send(`O resultado da divisão de ${body.a} e ${body.b} é ${resultado3}`);
-  res.send(`O resultado da multiplicação de ${body.a} e ${body.b} é ${resultado4}`);
-  
+  });
+app.post('/sub', function (req, res) {
+  var body = req.body;
+  var resultado = subtracao(body.a, body.b);
+  res.send(`O resultado da soma de ${body.a} e ${body.b} é ${resultado}`);
+});
+app.post('/div', function (req, res) {
+  var body = req.body;
+  var resultado = divisao(body.a, body.b);
+  res.send(`O resultado da soma de ${body.a} e ${body.b} é ${resultado}`);
+});
+app.post('/mult', function (req, res) {
+  var body = req.body;
+  var resultado = multiplicacao(body.a, body.b);
+  res.send(`O resultado da soma de ${body.a} e ${body.b} é ${resultado}`);
+});
 
+ 
 

@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
 app.get('/', function(req, res) {
-  res.send('Oi, mundo :-)');
+  res.send('Oi, mundo ::::-)');
 });
 
 var port = 3001;
@@ -37,17 +37,17 @@ app.post('/soma', function (req, res) {
 app.post('/sub', function (req, res) {
   var body = req.body;
   var resultado = subtracao(body.a, body.b);
-  res.send(`O resultado da soma de ${body.a} e ${body.b} é ${resultado}`);
+  res.send(`O resultado da subtração de ${body.a} e ${body.b} é ${resultado}`);
 });
 app.post('/div', function (req, res) {
   var body = req.body;
   var resultado = divisao(body.a, body.b);
-  res.send(`O resultado da soma de ${body.a} e ${body.b} é ${resultado}`);
+  res.send(`O resultado da divisão de ${body.a} e ${body.b} é ${resultado}`);
 });
 app.post('/mult', function (req, res) {
   var body = req.body;
   var resultado = multiplicacao(body.a, body.b);
-  res.send(`O resultado da soma de ${body.a} e ${body.b} é ${resultado}`);
+  res.send(`O resultado da multiplicação de ${body.a} e ${body.b} é ${resultado}`);
 });
 
  
